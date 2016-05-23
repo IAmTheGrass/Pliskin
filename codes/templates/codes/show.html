@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<P>Code</P>
+    <table>
+    	<tbody>
+    		<tr>
+    			<th>Name</th>
+    			<th>Text</th>
+    		</tr>
+    		<tr>
+    			<td> {{ codes.name }}</td>
+    			<td> {{ codes.text }}</td>
+    		</tr>
+    	</tbody>
+	</table>
+{% endblock %}

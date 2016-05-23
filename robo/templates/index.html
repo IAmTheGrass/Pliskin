@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<P>Robos</P>
+    <a href="/robo/new">New Robo</a>
+    <table>
+    	<tbody>
+    		<tr>
+    			<th>Name</th>
+    			<th>Tribe</th>
+                <th>Delete?</th>
+    		</tr>
+    		{% for robo in object_list %}
+    		<tr>
+    			<td><a href="/robo/{{ robo.id }}/show">{{ robo.name }}</a></td>
+    			<td> {{ robo.tribe }}</td>
+                <td><a href="/robo/{{ robo.id }}/delte">Delete</a></td>
+    		</tr>
+    		{% endfor %}
+    	</tbody>
+	</table>
+{% endblock %}

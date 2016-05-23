@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<P>Aquisitions Index</P>
+    <a href="/aquisition/new">New Aquisition</a>
+    <table>
+    	<tbody>
+    		<tr>
+    			<th>Robo</th>
+    			<th>Exploit</th>
+                <th>Delete?</th>
+    		</tr>
+    		{% for aquisition in object_list %}
+    		<tr>
+    			<td><a href="/aquisition/{{ aquisition.id }}/show">{{ aquisition.robo }}</a></td>
+    			<td> {{ aquisition.exploit }}</td>
+                <td><a href="/aquisition/{{ aquisition.id }}/delete">Delete</a></td>
+    		</tr>
+    		{% endfor %}
+    	</tbody>
+	</table>
+{% endblock %}

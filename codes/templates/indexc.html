@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<P>Codes Index</P>
+    <a href="/codes/new">New Code</a>
+    <table>
+    	<tbody>
+    		<tr>
+    			<th>Name</th>
+    			<th>Text</th>
+                <th>Delete</th>
+    		</tr>
+    		{% for codes in object_list %}
+    		<tr>
+    			<td><a href="/codes/{{ codes.id }}/show">{{ codes.name }}</a></td>
+    			<td> {{ codes.text }}</td>
+                <td><a href="/codes/{{ codes.id }}/delete">Delete</a></td>
+    		</tr>
+    		{% endfor %}
+    	</tbody>
+	</table>
+{% endblock %}
